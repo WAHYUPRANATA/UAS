@@ -78,14 +78,7 @@ while($r = mysqli_fetch_assoc($tampilkan)){
 													<input type="file" name="gambar" id="gambar" value = "<?php echo $gambar;?>"> </td>
 													</div>
 																
-                                                        <select name="kategori" class="form-control pro-edt-select form-control-primary">
-														
-														
-															<option value="Pria" <?php if ($kategori=='Pria'){echo 'selected=\'selected\'';}?>>Pria</option>
-															<option value="Wanita" <?php if ($kategori=='Wanita'){echo 'selected=\'selected\'';}?>>Wanita</option>
-															
-															
-														</select>
+                                                      
                                                 </div>
                                             </div>
                                         </div>

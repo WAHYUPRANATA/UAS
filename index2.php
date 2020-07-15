@@ -1,9 +1,9 @@
 <?php include 'cek_login.php'; ?>
 <html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BERANDA</title>
+    <title>Menu Utama</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -38,6 +38,7 @@
     <!-- morrisjs CSS
 		============================================ -->
     <link rel="stylesheet" href="css/morrisjs/morris.css">
+    
     <!-- mCustomScrollbar CSS
 		============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
@@ -48,6 +49,7 @@
     <!-- calendar CSS
 		============================================ -->
     <link rel="stylesheet" href="css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
     <!-- style CSS
 		============================================ -->
@@ -227,7 +229,7 @@
         </div>
 	</div>
 
-    <!-- jquery
+       <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
     <!-- bootstrap JS
@@ -274,6 +276,13 @@
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
+	<script>
+		$(document).ready(function() {
+    $('#example').DataTable();
+} );
+		</script>
 </body>
 
 </html>

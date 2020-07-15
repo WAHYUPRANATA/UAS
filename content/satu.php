@@ -1,6 +1,14 @@
+<?php
+require 'function.php';
+$koleksi = query("SELECT * FROM product_edit");
+
+if (isset($_POST["cari"])) {
+    $koleksi=berburu($_POST["keyword"]);
+ }
+?>		
 					<div class="product-status-wrap">
 							<h4>Products List <img class="main-logo" src="img/logo/list.png" alt="" /></h4>
-							<style>
+							<!-- <style>
 			input[type=text] {
 			width: 130px;
 			-webkit-transition: width 0.4s ease-in-out;
@@ -11,20 +19,21 @@
 			input[type=text]:focus {
 			width: 100%;
 			}
-	</style>
+	</style> -->
 	<form action="" method="POST">
         <input type="text" name="keyword" size="30" autofocus placeholder="cari masalah??" autocomplete="off">
     </form>
-                            <div class="add-product">
+                            <div class="add-product"> 
                                 <a href="index2.php?isi=add-product">Add Product</a>
 							</div>
 							
 
 							
 							
-                            <table>
+                            <table id='example' class='table'>
+							<thead>
                                 
-								
+								<tr>
                                     <th>Id</th>
                                     <th>Warna Barang</th>
 									<th>Harga</th>
@@ -32,16 +41,18 @@
                                     <th>Ukuran</th>
 									<th>Diskon</th>
 									<th>Image</th>
-                                    <th>Kategori</th>
-                                
+                                   
+									</tr>
+									</thead>
+									<tbody>
 								<?php
 								include "koneksi.php";
-								include "function.php";
+							
 								$tampilkan = mysqli_query($koneksi,"SELECT * FROM product_edit");
 
-								if (isset($_POST["cari"])) {
-									$hewan=golek($_POST["keyword"]);
-								 }
+								// if (isset($_POST["cari"])) {
+								// 	$hewan=golek($_POST["keyword"]);
+								//  }
 								while($r = mysqli_fetch_array($tampilkan)){
 								?>
 								
@@ -54,7 +65,7 @@
 									<td><?php echo $r['ukuran']?></td>
 									<td><?php echo $r['diskon']?></td>
 								    <td><img src="img/<?php echo $r['gambar'];?>" height="50"></td>
-									<td><?php echo $r['kategori']?></td>
+									
                                    <td>
 										<a href="index2.php?isi=edit-product&id=<?php echo $r['id_barang'];?>"class="btn btn-warning">Edit</a>
 										<a href='delete.php?id=<?php echo $r['id_barang'];?>' onclick="return confirm('apakah anda akan menghapus data ?')"class="btn btn-danger">Hapus</td>
@@ -66,7 +77,7 @@
                                     </td>
                                 </tr>
                             
-						
+								</tbody>
 						</table>
 						
 						</div>

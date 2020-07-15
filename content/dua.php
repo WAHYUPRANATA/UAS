@@ -48,12 +48,7 @@
 													<input type="file" name="gambar" id="gambar" ></td>
 													</div>
 																
-                                                        <select name="kategori" class="form-control pro-edt-select form-control-primary">
-															<option value="Pria">Pria</option>
-															<option value="Wanita">Wanita</option>
-															
-															
-														</select>
+                                                       
                                                 </div>
                                             </div>
                                         </div>
